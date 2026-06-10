@@ -1,0 +1,51 @@
+# ── Secrets y credenciales ──────────────────────────────────────────
+.env
+.env.*
+*.env
+secrets.*
+credentials.*
+*credentials*
+*_secret*
+*_token*
+
+# ── Datos personales / material interno ─────────────────────────────
+# docs/ lleva capturas con el tel personal de WhatsApp Business
+docs/
+# fotos-originales/ es material bruto pesado de la barbería
+fotos-originales/
+# vídeos: pesan GB, no van a la web en bruto
+*.mp4
+
+# ── macOS ────────────────────────────────────────────────────────────
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# ── Windows ──────────────────────────────────────────────────────────
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# ── Editores / IDEs ──────────────────────────────────────────────────
+.vscode/
+.idea/
+*.sublime-workspace
+*.swp
+*.swo
+
+# ── Node (por si se añade tooling en el futuro) ─────────────────────
+node_modules/
+npm-debug.log*
+yarn-error.log*
+
+# ── Logs y temporales ────────────────────────────────────────────────
+*.log
+logs/
+*.html.tmp
+
+# Descartes locales (no publicar)
+_descartes/
+
+# Notas internas de trabajo (no publicar en el repo del cliente)
+CLAUDE.md
+PENDIENTES.md
