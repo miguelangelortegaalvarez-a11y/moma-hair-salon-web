@@ -21,6 +21,8 @@
 - [ ] **9. Ritual a partir de ahí, en ambos Macs:** `git pull` al sentarse · commit + `git push` al terminar.
 - [ ] **10. Proyecto CRM demo (vive solo en el Mac academia):** convertirlo en repo git allí — `.gitignore` ANTES del primer commit (hook del paso 6 ya activo), repo GitHub **PRIVADO**, `CLAUDE.md` propio versionado desde el inicio, push. Después clonarlo en el Mac personal. Mismo ritual pull/push.
 
+> Prueba sync Mac personal → academia 12-jun-2026: si lees esta línea en el Mac de la academia tras `git pull`, la ida y vuelta funciona.
+
 ---
 
 ## 🟢 Puedo hacerlo YA (sin esperar al cliente)
