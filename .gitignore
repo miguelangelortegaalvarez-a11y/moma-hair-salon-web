@@ -45,7 +45,3 @@ logs/
 
 # Descartes locales (no publicar)
 _descartes/
-
-# Notas internas de trabajo (no publicar en el repo del cliente)
-CLAUDE.md
-PENDIENTES.md
