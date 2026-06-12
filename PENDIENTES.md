@@ -10,16 +10,16 @@
 > Decidido 12-jun-2026: este proyecto se trabaja desde los DOS Macs vía git pull/push.
 > `CLAUDE.md` y `PENDIENTES.md` ya viajan en el repo. `docs/` y `fotos-originales/` NO (solo Mac personal).
 
-- [ ] **1. Borrar la carpeta vieja** «MOMA PARA ACADEMIA» del Mac de la academia (está desactualizada; primero a la Papelera, vaciar cuando el clone funcione).
+- [x] **1. Borrar la carpeta vieja «MOMA PARA ACADEMIA» — NO APLICA (12-jun ✅):** no existe en el Mac de la academia (búsqueda completa, Papelera incluida). Solo están las dos carpetas buenas (`moma-hair-salon-web` y `moma-panel-demo`). Nada que borrar.
 - [x] **2. Generar clave SSH** (12-jun ✅): clave `mac-academia` generada en ese Mac.
 - [x] **3. Subir la clave PÚBLICA** a GitHub (12-jun ✅).
 - [x] **4. Probar la conexión** `ssh -T git@github.com` (12-jun ✅).
 - [x] **5. Clonar** (12-jun ✅): web y `moma-panel-demo` clonados, `git pull` probado.
-- [ ] **6. Configurar el hook pre-commit de escaneo de secrets** en ese Mac (en el personal es global vía `core.hooksPath`). Hay un `pre-commit` preparado en la carpeta de setup de la academia — **confirmar si quedó instalado** con `core.hooksPath`.
+- [x] **6. Hook pre-commit de escaneo de secrets (12-jun ✅):** instalado en `~/.git-hooks/pre-commit` (ejecutable) y activado global con `git config --global core.hooksPath ~/.git-hooks`. Verificado: se ejecutó de verdad en los commits de hoy (CRM demo + sync de la web) sin bloquear.
 - [ ] **7. Copiar el `~/.claude/CLAUDE.md` global** (reglas de trabajo de Miguel) por AirDrop desde el Mac personal → así Claude trabaja igual en ambos. La memoria global NO se copia (decisión de seguridad 12-jun: solo necesita MOMA, y el contexto de MOMA ya viaja en este repo).
 - [x] **8. Verificar Claude Code** (12-jun ✅): instalado, con sesión y trabajando allí.
 - [x] **9. Ritual probado en ambos sentidos (12-jun ✅):** `git pull` al sentarse · commit + `git push` al terminar. Ida `432e75a` ✓ · vuelta `e924823` ✓.
-- [ ] **10. Proyecto CRM demo (vive solo en el Mac academia):** convertirlo en repo git allí — `.gitignore` ANTES del primer commit (hook del paso 6 ya activo), repo GitHub **PRIVADO**, `CLAUDE.md` propio versionado desde el inicio, push. Después clonarlo en el Mac personal. Mismo ritual pull/push.
+- [~] **10. Proyecto CRM demo `moma-panel-demo` (12-jun — repo creado):** convertido en repo git en el Mac academia. **Hecho:** revisión de secretos limpia (datos sintéticos de `gen-data.js`, sin `.env`); `.gitignore` creado ANTES del primer commit; `git init`; `CLAUDE.md` propio versionado desde el inicio; commit inicial `0e12e6a` (10 ficheros); repo GitHub **PRIVADO** `miguelangelortegaalvarez-a11y/moma-panel-demo` + push vía SSH. **Falta:** clonarlo en el Mac personal y aplicar el mismo ritual pull/push.
 
 ---
 
