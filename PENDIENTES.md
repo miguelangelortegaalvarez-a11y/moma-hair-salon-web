@@ -5,38 +5,21 @@
 
 ---
 
-## ⭐ PRÓXIMA SESIÓN — PRIMERO ESTO (dejado el 12-jun-2026 por la tarde)
-
-> Da igual en qué Mac te sientes: empezar por aquí.
-
-1. **`git pull` en LAS DOS carpetas** (esta y `moma-panel-demo`). Deben llegar:
-   - Web → commit `309bcd1` (línea de prueba de sync) + el commit de este mismo bloque.
-   - Panel → commit `1c0917d` (adaptación a móvil).
-2. **Si estás en la ACADEMIA:** ver la línea de prueba de sync en este archivo = ida confirmada ✅. Después haz un cambio pequeño allí, commit + push → al hacer pull en el personal queda confirmada **la vuelta** y la prueba cerrada.
-3. **Recuerda lo que falta allí** (pasos 6-7 de la checklist de abajo): hook pre-commit + CLAUDE.md global. Hasta entonces, commits desde la academia con ojo.
-4. **Panel demo:** ya está publicado para el cliente en **https://moma-panel-demo.vercel.app** (versión móvil OK). Si se toca el panel, redesplegar SOLO desde el Mac personal (`vercel deploy --prod`); el login de Vercel no existe en la academia.
-
-*(Borrar este bloque cuando esté hecho.)*
-
----
-
-## 🖥️ Setup Mac academia (hacer el próximo día allí, con Claude)
+## 🖥️ Setup Mac academia (en curso — 12-jun-2026)
 
 > Decidido 12-jun-2026: este proyecto se trabaja desde los DOS Macs vía git pull/push.
 > `CLAUDE.md` y `PENDIENTES.md` ya viajan en el repo. `docs/` y `fotos-originales/` NO (solo Mac personal).
 
 - [ ] **1. Borrar la carpeta vieja** «MOMA PARA ACADEMIA» del Mac de la academia (está desactualizada; primero a la Papelera, vaciar cuando el clone funcione).
-- [ ] **2. Generar clave SSH** (la clave privada nunca sale de ese Mac): `ssh-keygen -t ed25519 -C "mac-academia"` — con passphrase, guardada en el Llavero de macOS.
-- [ ] **3. Subir la clave PÚBLICA** (`~/.ssh/id_ed25519.pub`) a GitHub web → Settings → SSH and GPG keys (lo hace Miguel, como siempre con GitHub web).
-- [ ] **4. Probar la conexión:** `ssh -T git@github.com` → debe saludar con el usuario.
-- [ ] **5. Clonar:** `git clone git@github.com:miguelangelortegaalvarez-a11y/moma-hair-salon-web.git`
-- [ ] **6. Configurar el hook pre-commit de escaneo de secrets** en ese Mac (en el personal es global vía `core.hooksPath`; en la academia no existe aún — Claude lo monta).
+- [x] **2. Generar clave SSH** (12-jun ✅): clave `mac-academia` generada en ese Mac.
+- [x] **3. Subir la clave PÚBLICA** a GitHub (12-jun ✅).
+- [x] **4. Probar la conexión** `ssh -T git@github.com` (12-jun ✅).
+- [x] **5. Clonar** (12-jun ✅): web y `moma-panel-demo` clonados, `git pull` probado.
+- [ ] **6. Configurar el hook pre-commit de escaneo de secrets** en ese Mac (en el personal es global vía `core.hooksPath`). Hay un `pre-commit` preparado en la carpeta de setup de la academia — **confirmar si quedó instalado** con `core.hooksPath`.
 - [ ] **7. Copiar el `~/.claude/CLAUDE.md` global** (reglas de trabajo de Miguel) por AirDrop desde el Mac personal → así Claude trabaja igual en ambos. La memoria global NO se copia (decisión de seguridad 12-jun: solo necesita MOMA, y el contexto de MOMA ya viaja en este repo).
-- [ ] **8. Verificar Claude Code:** instalado y con sesión iniciada en la cuenta de Miguel.
-- [ ] **9. Ritual a partir de ahí, en ambos Macs:** `git pull` al sentarse · commit + `git push` al terminar.
+- [x] **8. Verificar Claude Code** (12-jun ✅): instalado, con sesión y trabajando allí.
+- [x] **9. Ritual probado en ambos sentidos (12-jun ✅):** `git pull` al sentarse · commit + `git push` al terminar. Ida `432e75a` ✓ · vuelta `e924823` ✓.
 - [ ] **10. Proyecto CRM demo (vive solo en el Mac academia):** convertirlo en repo git allí — `.gitignore` ANTES del primer commit (hook del paso 6 ya activo), repo GitHub **PRIVADO**, `CLAUDE.md` propio versionado desde el inicio, push. Después clonarlo en el Mac personal. Mismo ritual pull/push.
-
-> Prueba sync Mac personal → academia 12-jun-2026: si lees esta línea en el Mac de la academia tras `git pull`, la ida y vuelta funciona.
 
 ---
 
@@ -106,4 +89,4 @@
 - [x] Diseño minimal lujo "blanco roto" elegido (`propuesta-minimal.html`).
 - [x] Hosting/dominio decididos (10-jun): GitHub Pages público + Don Dominio.
 - [x] `docs/` y `fotos-originales/` en `.gitignore` (verificado 10-jun).
-- [x] Prueba de vuelta academia → personal 12-jun OK.
+- [x] **Prueba de sync multi-Mac CERRADA (12-jun):** ida personal → academia (`432e75a`) ✓ y vuelta academia → personal (`e924823`) ✓. Los dos Macs sincronizan vía pull/push.
