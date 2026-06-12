@@ -5,6 +5,21 @@
 
 ---
 
+## ⭐ PRÓXIMA SESIÓN — PRIMERO ESTO (dejado el 12-jun-2026 por la tarde)
+
+> Da igual en qué Mac te sientes: empezar por aquí.
+
+1. **`git pull` en LAS DOS carpetas** (esta y `moma-panel-demo`). Deben llegar:
+   - Web → commit `309bcd1` (línea de prueba de sync) + el commit de este mismo bloque.
+   - Panel → commit `1c0917d` (adaptación a móvil).
+2. **Si estás en la ACADEMIA:** ver la línea de prueba de sync en este archivo = ida confirmada ✅. Después haz un cambio pequeño allí, commit + push → al hacer pull en el personal queda confirmada **la vuelta** y la prueba cerrada.
+3. **Recuerda lo que falta allí** (pasos 6-7 de la checklist de abajo): hook pre-commit + CLAUDE.md global. Hasta entonces, commits desde la academia con ojo.
+4. **Panel demo:** ya está publicado para el cliente en **https://moma-panel-demo.vercel.app** (versión móvil OK). Si se toca el panel, redesplegar SOLO desde el Mac personal (`vercel deploy --prod`); el login de Vercel no existe en la academia.
+
+*(Borrar este bloque cuando esté hecho.)*
+
+---
+
 ## 🖥️ Setup Mac academia (hacer el próximo día allí, con Claude)
 
 > Decidido 12-jun-2026: este proyecto se trabaja desde los DOS Macs vía git pull/push.
