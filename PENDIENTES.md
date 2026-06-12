@@ -1,7 +1,25 @@
 # Pendientes — Web MOMA Hair Salon
 
-> Lista viva de tareas. Marcar `[x]` al completar. Última actualización: 10-jun-2026.
+> Lista viva de tareas. Marcar `[x]` al completar. Última actualización: 12-jun-2026.
 > El detalle del plan de despliegue está en `CLAUDE.md` (sección «Plan de despliegue»).
+
+---
+
+## 🖥️ Setup Mac academia (hacer el próximo día allí, con Claude)
+
+> Decidido 12-jun-2026: este proyecto se trabaja desde los DOS Macs vía git pull/push.
+> `CLAUDE.md` y `PENDIENTES.md` ya viajan en el repo. `docs/` y `fotos-originales/` NO (solo Mac personal).
+
+- [ ] **1. Borrar la carpeta vieja** «MOMA PARA ACADEMIA» del Mac de la academia (está desactualizada; primero a la Papelera, vaciar cuando el clone funcione).
+- [ ] **2. Generar clave SSH** (la clave privada nunca sale de ese Mac): `ssh-keygen -t ed25519 -C "mac-academia"` — con passphrase, guardada en el Llavero de macOS.
+- [ ] **3. Subir la clave PÚBLICA** (`~/.ssh/id_ed25519.pub`) a GitHub web → Settings → SSH and GPG keys (lo hace Miguel, como siempre con GitHub web).
+- [ ] **4. Probar la conexión:** `ssh -T git@github.com` → debe saludar con el usuario.
+- [ ] **5. Clonar:** `git clone git@github.com:miguelangelortegaalvarez-a11y/moma-hair-salon-web.git`
+- [ ] **6. Configurar el hook pre-commit de escaneo de secrets** en ese Mac (en el personal es global vía `core.hooksPath`; en la academia no existe aún — Claude lo monta).
+- [ ] **7. Copiar el `~/.claude/CLAUDE.md` global** (reglas de trabajo de Miguel) por AirDrop desde el Mac personal → así Claude trabaja igual en ambos. La memoria global NO se copia (decisión de seguridad 12-jun: solo necesita MOMA, y el contexto de MOMA ya viaja en este repo).
+- [ ] **8. Verificar Claude Code:** instalado y con sesión iniciada en la cuenta de Miguel.
+- [ ] **9. Ritual a partir de ahí, en ambos Macs:** `git pull` al sentarse · commit + `git push` al terminar.
+- [ ] **10. Proyecto CRM demo (vive solo en el Mac academia):** convertirlo en repo git allí — `.gitignore` ANTES del primer commit (hook del paso 6 ya activo), repo GitHub **PRIVADO**, `CLAUDE.md` propio versionado desde el inicio, push. Después clonarlo en el Mac personal. Mismo ritual pull/push.
 
 ---
 
