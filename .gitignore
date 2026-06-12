@@ -15,6 +15,10 @@ docs/
 fotos-originales/
 # vídeos: pesan GB, no van a la web en bruto
 *.mp4
+# Notas de trabajo: NO van al repo público (mismo sistema que el Dashboard)
+CLAUDE.md
+PENDIENTES.md
+.claude/
 
 # ── macOS ────────────────────────────────────────────────────────────
 .DS_Store
