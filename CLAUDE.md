@@ -139,6 +139,14 @@ Sección añadida y **publicada el 10-jun-2026** para mejorar el SEO y mantener 
 
 ---
 
+## Comunicación de trabajo — OBLIGATORIO (vale en los dos Macs)
+
+Miguel quiere seguir cada movimiento. En cualquier sesión de este proyecto:
+
+1. **Narrar cada acción antes de hacerla** (una línea: "voy a editar X", "voy a hacer pull"…). Nada de cadenas largas de comandos en silencio.
+2. **Antes de un `git push` → aviso destacado**: recordar que es el paso que PUBLICA (repo público en el caso de la web) y qué commits van a subir. Además, `.claude/settings.json` obliga al harness a pedir confirmación en cada push — no quitar esa regla.
+3. Los tres pasos en cristiano para Miguel: **añadir (`git add`) → confirmar (`git commit`) → subir (`git push`)**. Su momento de revisión es el staged, antes del commit.
+
 ## Seguridad en commits — OBLIGATORIO
 
 El hook global `~/.git-hooks/pre-commit` escanea secrets en cada commit (ya activo vía `core.hooksPath`). Aun así, antes de cualquier `git commit`:
