@@ -106,3 +106,4 @@
 - [x] Diseño minimal lujo "blanco roto" elegido (`propuesta-minimal.html`).
 - [x] Hosting/dominio decididos (10-jun): GitHub Pages público + Don Dominio.
 - [x] `docs/` y `fotos-originales/` en `.gitignore` (verificado 10-jun).
+- [x] Prueba de vuelta academia → personal 12-jun OK.
