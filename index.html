@@ -59,8 +59,13 @@ h1,h2,h3{font-family:var(--serif);color:var(--ink);font-weight:400;line-height:1
 .nav__links a:hover{opacity:1}
 .nav__logo{justify-self:center}
 .nav__logo img{height:66px;filter:invert(1) brightness(2)}
-.nav__cta{justify-self:end}
+.nav__cta{justify-self:end;display:flex;align-items:center;gap:20px}
 .nav__cta .link-u{color:var(--paper);border-bottom-color:var(--paper)}
+.lang-switch{display:flex;align-items:center;gap:7px;font-family:var(--sans);font-size:11px;letter-spacing:.16em}
+.lang-switch button{background:none;border:0;padding:0;color:var(--paper);opacity:.45;cursor:pointer;font:inherit;letter-spacing:inherit;transition:opacity .3s}
+.lang-switch button:hover{opacity:.8}
+.lang-switch button.is-active{opacity:1;border-bottom:1px solid var(--paper);padding-bottom:2px}
+.lang-switch span{color:var(--paper);opacity:.35}
 /* Botón hamburguesa (solo móvil) */
 .nav__burger{display:none;width:28px;height:16px;position:relative;background:none;border:0;padding:0;cursor:pointer;justify-self:start;z-index:60}
 .nav__burger span{position:absolute;left:0;width:100%;height:1.5px;background:var(--paper);transition:transform .4s var(--ease),opacity .3s var(--ease)}
@@ -255,7 +260,7 @@ h1,h2,h3{font-family:var(--serif);color:var(--ink);font-weight:400;line-height:1
 
 @media(max-width:880px){
   .nav{padding:14px 22px}
-  .nav__cta{display:none}
+  .nav__cta .link-u{display:none}
   .nav__burger{display:block}
   .nav__logo img{height:56px}
   .nav__links{
@@ -320,77 +325,84 @@ h1,h2,h3{font-family:var(--serif);color:var(--ink);font-weight:400;line-height:1
     <span></span><span></span><span></span>
   </button>
   <nav class="nav__links" id="navlinks">
-    <a href="#servicios">Servicios</a>
-    <a href="#productos">Productos</a>
-    <a href="#nosotros">Nosotros</a>
-    <a href="#galeria">Galería</a>
+    <a href="#servicios" data-en="Services">Servicios</a>
+    <a href="#productos" data-en="Products">Productos</a>
+    <a href="#nosotros" data-en="About">Nosotros</a>
+    <a href="#galeria" data-en="Gallery">Galería</a>
     <a href="blog/index.html">Blog</a>
-    <a href="#contacto">Contacto</a>
-    <a href="https://barberiamoma.booksy.com/a" class="nav__links-reservar">Reservar</a>
+    <a href="#contacto" data-en="Contact">Contacto</a>
+    <a href="https://barberiamoma.booksy.com/a" class="nav__links-reservar" data-en="Book">Reservar</a>
   </nav>
   <a href="#" class="nav__logo"><img src="img/logo-moma.png" alt="MOMA Hair Salon" /></a>
-  <div class="nav__cta"><a href="https://barberiamoma.booksy.com/a" class="link-u">Reservar</a></div>
+  <div class="nav__cta">
+    <div class="lang-switch" role="group" aria-label="Idioma / Language">
+      <button type="button" data-lang="es">ES</button>
+      <span aria-hidden="true">/</span>
+      <button type="button" data-lang="en">EN</button>
+    </div>
+    <a href="https://barberiamoma.booksy.com/a" class="link-u" data-en="Book">Reservar</a>
+  </div>
 </header>
 
 <section class="hero">
-  <p class="lbl">Barbería · Torremolinos · Est. 2020</p>
+  <p class="lbl" data-en="Barbershop · Torremolinos · Est. 2020">Barbería · Torremolinos · Est. 2020</p>
   <h1>MOMA<em id="tag" aria-label="el cuidado como oficio"></em></h1>
-  <p class="hero__sub">Cortes, barba y estilo masculino en un espacio pensado al detalle.</p>
+  <p class="hero__sub" data-en="Haircuts, beard and men's grooming in a space designed down to the last detail.">Cortes, barba y estilo masculino en un espacio pensado al detalle.</p>
   <div class="hero__btns">
-    <a href="https://barberiamoma.booksy.com/a" class="btn">Reservar cita</a>
+    <a href="https://barberiamoma.booksy.com/a" class="btn" data-en="Book now">Reservar cita</a>
     <a href="https://wa.me/34613603857?text=Hola%2C%20me%20gustar%C3%ADa%20reservar%20una%20cita%20en%20MOMA" target="_blank" rel="noopener" class="btn">WhatsApp</a>
-    <a href="tel:+34613603857" class="btn">Llamar</a>
+    <a href="tel:+34613603857" class="btn" data-en="Call">Llamar</a>
   </div>
-  <div class="hero__scroll">Desliza</div>
+  <div class="hero__scroll" data-en="Scroll">Desliza</div>
 </section>
 
 
 <section class="proof reveal" id="resenas">
   <div class="proof__head">
-    <span class="lbl">Lo que dicen nuestros clientes</span>
-    <h2>Confianza que se nota</h2>
+    <span class="lbl" data-en="What our clients say">Lo que dicen nuestros clientes</span>
+    <h2 data-en="Trust you can feel">Confianza que se nota</h2>
   </div>
   <div class="proof__grid">
     <div class="proof__item">
       <span class="proof__num" data-count="4.8" data-decimals="1">4,8</span>
       <div class="proof__stars" aria-label="4,8 de 5 estrellas">★★★★★</div>
-      <span class="proof__lbl">Valoración en Google</span>
+      <span class="proof__lbl" data-en="Google rating">Valoración en Google</span>
     </div>
     <div class="proof__item">
       <span class="proof__num" data-count="68">68</span>
-      <span class="proof__lbl">Reseñas en Google</span>
+      <span class="proof__lbl" data-en="Google reviews">Reseñas en Google</span>
     </div>
   </div>
-  <a href="https://search.google.com/local/reviews?placeid=ChIJs7sia5L7cg0R487xymxbXDs" target="_blank" rel="noopener" class="proof__cta link-u">Ver reseñas en Google</a>
+  <a href="https://search.google.com/local/reviews?placeid=ChIJs7sia5L7cg0R487xymxbXDs" target="_blank" rel="noopener" class="proof__cta link-u" data-en="See reviews on Google">Ver reseñas en Google</a>
 </section>
 
 
 <section class="sec sec--alt" id="ventajas">
   <div class="wrap">
     <div class="sec__head">
-      <span class="lbl">Por qué MOMA</span>
-      <h2>Cuidado en cada detalle</h2>
+      <span class="lbl" data-en="Why MOMA">Por qué MOMA</span>
+      <h2 data-en="Care in every detail">Cuidado en cada detalle</h2>
     </div>
     <div class="feats">
       <div class="feat">
         <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-        <h3>Atención personalizada</h3>
-        <p>Tiempo y dedicación en cada visita. Aquí no hay prisas.</p>
+        <h3 data-en="Personalised service">Atención personalizada</h3>
+        <p data-en="Time and dedication on every visit. No rush here.">Tiempo y dedicación en cada visita. Aquí no hay prisas.</p>
       </div>
       <div class="feat">
         <svg viewBox="0 0 24 24"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/><line x1="8.12" y1="8.12" x2="12" y2="12"/></svg>
-        <h3>Cortes de pelo</h3>
-        <p>Tu corte, pensado para reflejar tu personalidad y tu estilo.</p>
+        <h3 data-en="Haircuts">Cortes de pelo</h3>
+        <p data-en="A cut designed to reflect your personality and style.">Tu corte, pensado para reflejar tu personalidad y tu estilo.</p>
       </div>
       <div class="feat">
         <svg viewBox="0 0 24 24"><path d="M3 21 L9.2 14.8 l1.7 1.7 L4.7 22.7 Z"/><circle cx="10.4" cy="13.9" r="1"/><path d="M11.6 13 L20 4.6 a1.7 1.7 0 0 1 2.4 2.4 L13.9 15.4 Z"/></svg>
-        <h3>Arreglos de barba</h3>
-        <p>Perfilado y afeitado que te dejan renovado y pulido.</p>
+        <h3 data-en="Beard grooming">Arreglos de barba</h3>
+        <p data-en="Shaping and shaving that leave you sharp and refreshed.">Perfilado y afeitado que te dejan renovado y pulido.</p>
       </div>
       <div class="feat">
         <svg viewBox="0 0 24 24"><path d="M10 9h4v11a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1z"/><path d="M10.5 9V6h3v3"/><path d="M11 6V4.5h2V6"/></svg>
-        <h3>Productos de calidad</h3>
-        <p>Cosmética masculina seleccionada para un cuidado óptimo.</p>
+        <h3 data-en="Quality products">Productos de calidad</h3>
+        <p data-en="Selected men's grooming products for optimal care.">Cosmética masculina seleccionada para un cuidado óptimo.</p>
       </div>
     </div>
   </div>
@@ -399,18 +411,18 @@ h1,h2,h3{font-family:var(--serif);color:var(--ink);font-weight:400;line-height:1
 <section class="sec" id="servicios">
   <div class="wrap">
     <div class="sec__head">
-      <span class="lbl">Tarifa</span>
-      <h2>Servicios</h2>
-      <p>Precios claros. El tiempo que merece cada corte.</p>
+      <span class="lbl" data-en="Pricing">Tarifa</span>
+      <h2 data-en="Services">Servicios</h2>
+      <p data-en="Clear prices. The time every cut deserves.">Precios claros. El tiempo que merece cada corte.</p>
     </div>
     <div class="price">
-      <div class="price__row reveal"><div><div class="price__name">Corte de pelo</div></div><span class="price__val">14€</span></div>
-      <div class="price__row reveal"><div><div class="price__name">Corte + perfilado de barba</div></div><span class="price__val">16€</span></div>
-      <div class="price__row reveal"><div><div class="price__name">Corte + barba completa</div></div><span class="price__val">18€</span></div>
-      <div class="price__row reveal"><div><div class="price__name">Corte + barba + peinado</div><div class="price__desc">Experiencia completa</div></div><span class="price__val">20€</span></div>
-      <div class="price__row reveal"><div><div class="price__name">Recorte de barba</div></div><span class="price__val">8€</span></div>
-      <div class="price__row reveal"><div><div class="price__name">Niños 2–8 años</div></div><span class="price__val">11€</span></div>
-      <div class="price__row reveal"><div><div class="price__name">Suplemento lavado y peinado</div></div><span class="price__val">+2€</span></div>
+      <div class="price__row reveal"><div><div class="price__name" data-en="Haircut">Corte de pelo</div></div><span class="price__val">14€</span></div>
+      <div class="price__row reveal"><div><div class="price__name" data-en="Haircut + beard line-up">Corte + perfilado de barba</div></div><span class="price__val">16€</span></div>
+      <div class="price__row reveal"><div><div class="price__name" data-en="Haircut + full beard">Corte + barba completa</div></div><span class="price__val">18€</span></div>
+      <div class="price__row reveal"><div><div class="price__name" data-en="Haircut + beard + styling">Corte + barba + peinado</div><div class="price__desc" data-en="The full experience">Experiencia completa</div></div><span class="price__val">20€</span></div>
+      <div class="price__row reveal"><div><div class="price__name" data-en="Beard trim">Recorte de barba</div></div><span class="price__val">8€</span></div>
+      <div class="price__row reveal"><div><div class="price__name" data-en="Kids 2–8 years">Niños 2–8 años</div></div><span class="price__val">11€</span></div>
+      <div class="price__row reveal"><div><div class="price__name" data-en="Wash &amp; style add-on">Suplemento lavado y peinado</div></div><span class="price__val">+2€</span></div>
     </div>
   </div>
 </section>
@@ -418,13 +430,13 @@ h1,h2,h3{font-family:var(--serif);color:var(--ink);font-weight:400;line-height:1
 <section class="sec sec--alt" id="productos">
   <div class="wrap">
     <div class="sec__head">
-      <span class="lbl">Tienda</span>
-      <h2>Productos</h2>
+      <span class="lbl" data-en="Shop">Tienda</span>
+      <h2 data-en="Products">Productos</h2>
     </div>
     <div class="soon reveal">
-      <p class="soon__tag">Llévate el ritual a casa</p>
-      <p class="soon__txt">Ceras, after shave, agua de mar, herramientas y más para mantener entre cita y cita el resultado de la barbería. Consulta toda la selección en nuestro catálogo.</p>
-      <a href="https://wa.me/c/34613603857" target="_blank" rel="noopener" class="btn" style="margin-top:34px">Ver catálogo</a>
+      <p class="soon__tag" data-en="Take the ritual home">Llévate el ritual a casa</p>
+      <p class="soon__txt" data-en="Waxes, aftershave, sea salt spray, tools and more to keep your barbershop look between visits. See the full selection in our catalogue.">Ceras, after shave, agua de mar, herramientas y más para mantener entre cita y cita el resultado de la barbería. Consulta toda la selección en nuestro catálogo.</p>
+      <a href="https://wa.me/c/34613603857" target="_blank" rel="noopener" class="btn" style="margin-top:34px" data-en="View catalogue">Ver catálogo</a>
     </div>
   </div>
 </section>
@@ -432,32 +444,32 @@ h1,h2,h3{font-family:var(--serif);color:var(--ink);font-weight:400;line-height:1
 <section class="sec" id="nosotros">
   <div class="wrap">
     <div class="sec__head">
-      <h2>Conócenos</h2>
+      <h2 data-en="About us">Conócenos</h2>
     </div>
   </div>
   <div class="wrap about">
     <div class="about__head reveal reveal--right">
-      <span class="lbl">Rubén · Barbero</span>
-      <h2>Más que un corte</h2>
+      <span class="lbl" data-en="Rubén · Barber">Rubén · Barbero</span>
+      <h2 data-en="More than a haircut">Más que un corte</h2>
     </div>
     <div class="about__media reveal reveal--left"><img src="img/moma-about.jpg" alt="Rubén, barbero de MOMA" /></div>
     <div class="about__body reveal reveal--right" data-d="1">
-      <p>En MOMA entendemos la barbería como un oficio. Un espacio cuidado en Calle Europa donde cada visita es un momento para ti.</p>
-      <p style="margin-top:20px"><span class="num">2020</span>Cuidando el estilo de Torremolinos, corte a corte.</p>
-      <a href="#contacto" class="link-u" style="display:inline-block;margin-top:30px">Cómo llegar</a>
+      <p data-en="At MOMA we see barbering as a craft. A carefully designed space on Calle Europa where every visit is a moment for you.">En MOMA entendemos la barbería como un oficio. Un espacio cuidado en Calle Europa donde cada visita es un momento para ti.</p>
+      <p style="margin-top:20px" data-en='<span class="num">2020</span>Caring for the style of Torremolinos, cut by cut.'><span class="num">2020</span>Cuidando el estilo de Torremolinos, corte a corte.</p>
+      <a href="#contacto" class="link-u" style="display:inline-block;margin-top:30px" data-en="Get directions">Cómo llegar</a>
     </div>
   </div>
 
   <div class="wrap about about--rev" style="margin-top:110px">
     <div class="about__head reveal reveal--left">
-      <span class="lbl">Sergio · Barbero</span>
-      <h2>Cada cliente, su estilo</h2>
+      <span class="lbl" data-en="Sergio · Barber">Sergio · Barbero</span>
+      <h2 data-en="Every client, their own style">Cada cliente, su estilo</h2>
     </div>
     <div class="about__media reveal reveal--right"><img src="img/moma-feature.jpg" alt="Sergio, barbero de MOMA" /></div>
     <div class="about__body reveal reveal--left" data-d="1">
-      <p>Escuchamos lo que buscas y lo trabajamos a tu medida. Sin prisas ni cortes en cadena: tiempo, técnica y un resultado pensado para tu cara y tu día a día.</p>
-      <p style="margin-top:20px"><span class="num">Tú</span>El centro de cada corte, de principio a fin.</p>
-      <a href="https://barberiamoma.booksy.com/a" class="link-u" style="display:inline-block;margin-top:30px">Reservar cita</a>
+      <p data-en="We listen to what you want and tailor it to you. No rush, no production-line cuts: time, technique and a result designed for your face and your daily life.">Escuchamos lo que buscas y lo trabajamos a tu medida. Sin prisas ni cortes en cadena: tiempo, técnica y un resultado pensado para tu cara y tu día a día.</p>
+      <p style="margin-top:20px" data-en='<span class="num">You</span>The focus of every cut, from start to finish.'><span class="num">Tú</span>El centro de cada corte, de principio a fin.</p>
+      <a href="https://barberiamoma.booksy.com/a" class="link-u" style="display:inline-block;margin-top:30px" data-en="Book now">Reservar cita</a>
     </div>
   </div>
 </section>
@@ -465,8 +477,8 @@ h1,h2,h3{font-family:var(--serif);color:var(--ink);font-weight:400;line-height:1
 <section class="sec sec--alt" id="galeria" style="padding-bottom:40px">
   <div class="wrap">
     <div class="sec__head">
-      <span class="lbl">Trabajos</span>
-      <h2>Galería</h2>
+      <span class="lbl" data-en="Our work">Trabajos</span>
+      <h2 data-en="Gallery">Galería</h2>
     </div>
   </div>
   <div class="gal">
@@ -482,13 +494,13 @@ h1,h2,h3{font-family:var(--serif);color:var(--ink);font-weight:400;line-height:1
 </section>
 
 <section class="sec sec--alt testi2" id="testimonios">
-  <span class="lbl">Reseñas · 4,8 ★ en Google</span>
+  <span class="lbl" data-en="Reviews · 4.8 ★ on Google">Reseñas · 4,8 ★ en Google</span>
   <div class="testi2__stars" aria-label="4,8 de 5 estrellas">★★★★★</div>
   <div class="testi2__stage">
-    <div class="testi2__item is-active"><blockquote>“Llevo meses cortándome el pelo y la barba allí, muy contento. Los chavales son geniales. ¡Súper recomendables!”</blockquote><cite>Armando Villalba</cite></div>
-    <div class="testi2__item"><blockquote>“Servicio excelente y profesional, sin duda la mejor peluquería. 10/10.”</blockquote><cite>Pablo Prieto</cite></div>
-    <div class="testi2__item"><blockquote>“Muy profesional y puntual. Vivo en Fuengirola y voy a Torremolinos a pelarme, con eso lo digo todo.”</blockquote><cite>Lázaro Quintana</cite></div>
-    <div class="testi2__item"><blockquote>“He encontrado el mejor barbero y la barbería perfecta. Mi barbero es Sergio, un crack.”</blockquote><cite>Ash C.</cite></div>
+    <div class="testi2__item is-active"><blockquote data-en="“I've been getting my hair and beard done there for months — really happy. The guys are great. Highly recommended!”">“Llevo meses cortándome el pelo y la barba allí, muy contento. Los chavales son geniales. ¡Súper recomendables!”</blockquote><cite>Armando Villalba</cite></div>
+    <div class="testi2__item"><blockquote data-en="“Excellent, professional service — by far the best barbershop. 10/10.”">“Servicio excelente y profesional, sin duda la mejor peluquería. 10/10.”</blockquote><cite>Pablo Prieto</cite></div>
+    <div class="testi2__item"><blockquote data-en="“Very professional and punctual. I live in Fuengirola and travel to Torremolinos for my haircut — that says it all.”">“Muy profesional y puntual. Vivo en Fuengirola y voy a Torremolinos a pelarme, con eso lo digo todo.”</blockquote><cite>Lázaro Quintana</cite></div>
+    <div class="testi2__item"><blockquote data-en="“I've found the best barber and the perfect barbershop. My barber is Sergio, an absolute pro.”">“He encontrado el mejor barbero y la barbería perfecta. Mi barbero es Sergio, un crack.”</blockquote><cite>Ash C.</cite></div>
   </div>
   <div class="testi2__dots">
     <button class="is-active" aria-label="Reseña 1"></button>
@@ -501,9 +513,9 @@ h1,h2,h3{font-family:var(--serif);color:var(--ink);font-weight:400;line-height:1
 <section class="cta">
   <div class="wrap">
     <span class="lbl">Calle Europa 58 · Torremolinos</span>
-    <h2 style="margin-top:20px">Tu próxima <em>cita</em></h2>
-    <p>Elige barbero, día y hora desde tu móvil.</p>
-    <a href="https://barberiamoma.booksy.com/a" class="btn btn--ink">Reservar ahora</a>
+    <h2 style="margin-top:20px" data-en="Your next &lt;em&gt;appointment&lt;/em&gt;">Tu próxima <em>cita</em></h2>
+    <p data-en="Pick your barber, day and time from your phone.">Elige barbero, día y hora desde tu móvil.</p>
+    <a href="https://barberiamoma.booksy.com/a" class="btn btn--ink" data-en="Book now">Reservar ahora</a>
   </div>
 </section>
 
@@ -512,21 +524,21 @@ h1,h2,h3{font-family:var(--serif);color:var(--ink);font-weight:400;line-height:1
     <div class="foot__top">
       <div class="foot__brand">
         <img class="foot__logo" src="img/logo-moma.png" alt="MOMA Hair Salon" />
-        <p>Barbería · Cortes, barba y cuidado masculino en Torremolinos.</p>
+        <p data-en="Barbershop · Haircuts, beard and men's grooming in Torremolinos.">Barbería · Cortes, barba y cuidado masculino en Torremolinos.</p>
       </div>
       <div class="foot__col">
-        <h4>Dónde</h4>
+        <h4 data-en="Where">Dónde</h4>
         <p>Calle Europa, 58</p>
         <p>29620 Torremolinos</p>
         <a href="https://www.google.com/maps/search/?api=1&query=MOMA%20Hair%20Salon%20Torremolinos&query_place_id=ChIJs7sia5L7cg0R487xymxbXDs" target="_blank" rel="noopener">Google Maps →</a>
       </div>
       <div class="foot__col">
-        <h4>Horario</h4>
-        <p>Lun–Vie · 10–14 / 16–20</p>
-        <p>Sábados · 10–14</p>
+        <h4 data-en="Hours">Horario</h4>
+        <p data-en="Mon–Fri · 10–14 / 16–20">Lun–Vie · 10–14 / 16–20</p>
+        <p data-en="Saturdays · 10–14">Sábados · 10–14</p>
       </div>
       <div class="foot__col">
-        <h4>Contacto</h4>
+        <h4 data-en="Contact">Contacto</h4>
         <a href="tel:+34613603857">+34 613 603 857</a>
         <a href="https://wa.me/34613603857?text=Hola%2C%20me%20gustar%C3%ADa%20reservar%20una%20cita%20en%20MOMA" target="_blank" rel="noopener">WhatsApp</a>
         <a href="mailto:momahairsalon@gmail.com">momahairsalon@gmail.com</a>
@@ -537,15 +549,48 @@ h1,h2,h3{font-family:var(--serif);color:var(--ink);font-weight:400;line-height:1
       <span>© 2026 MOMA Hair Salon</span>
       <span>Torremolinos · Málaga</span>
     </div>
-    <div class="foot__credit">Diseño y desarrollo por Miguel Ángel Ortega Álvarez</div>
+    <div class="foot__credit" data-en="Designed and developed by Miguel Ángel Ortega Álvarez">Diseño y desarrollo por Miguel Ángel Ortega Álvarez</div>
   </div>
 </footer>
 
 <script>
+/* ===== Selector de idioma ES / EN ===== */
+(function(){
+  var TAG = { es: 'el cuidado como oficio', en: 'grooming as a craft' };
+  window.MOMA_TAG = TAG;
+  function apply(lang){
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-en]').forEach(function(el){
+      if(el.getAttribute('data-es') === null){ el.setAttribute('data-es', el.innerHTML); }
+      el.innerHTML = (lang === 'en') ? el.getAttribute('data-en') : el.getAttribute('data-es');
+    });
+    document.querySelectorAll('.lang-switch button').forEach(function(b){
+      b.classList.toggle('is-active', b.getAttribute('data-lang') === lang);
+    });
+    var tag = document.getElementById('tag');
+    if(tag){
+      tag.setAttribute('aria-label', TAG[lang]);
+      if(tag.classList.contains('done')){ tag.textContent = TAG[lang]; } /* si ya terminó de escribirse, cambia el texto */
+    }
+    try{ localStorage.setItem('moma-lang', lang); }catch(e){}
+    window.MOMA_LANG = lang;
+  }
+  window.MOMA_apply = apply;
+  var saved = null;
+  try{ saved = localStorage.getItem('moma-lang'); }catch(e){}
+  var initial = saved || ((navigator.language || 'es').slice(0,2).toLowerCase() === 'en' ? 'en' : 'es');
+  apply(initial);
+  document.addEventListener('click', function(e){
+    var b = (e.target && e.target.closest) ? e.target.closest('.lang-switch button') : null;
+    if(b){ apply(b.getAttribute('data-lang')); }
+  });
+})();
+
+/* ===== Hero: efecto máquina de escribir (en el idioma activo) ===== */
 (function(){
   var el = document.getElementById('tag');
   if(!el) return;
-  var txt = 'el cuidado como oficio';
+  var txt = (window.MOMA_TAG && window.MOMA_TAG[window.MOMA_LANG]) || 'el cuidado como oficio';
   if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches){
     el.textContent = txt; el.classList.add('done'); return;
   }
