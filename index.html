@@ -107,6 +107,8 @@ h1,h2,h3{font-family:var(--serif);color:var(--ink);font-weight:400;line-height:1
 .proof__stars{margin-top:14px;font-size:15px;letter-spacing:.16em;color:var(--ink);line-height:1}
 .proof__lbl{display:block;margin-top:14px;text-transform:uppercase;letter-spacing:.26em;font-size:10px;color:var(--soft)}
 .proof__cta{display:inline-block;margin-top:48px}
+.proof__links{margin-top:48px;display:flex;gap:16px 34px;justify-content:center;align-items:center;flex-wrap:wrap}
+.proof__links .proof__cta{margin-top:0}
 @media(max-width:640px){
   .proof__item{flex-basis:100%;padding:26px 0}
   .proof__item+.proof__item{border-left:none;border-top:1px solid var(--line)}
@@ -366,14 +368,18 @@ h1,h2,h3{font-family:var(--serif);color:var(--ink);font-weight:400;line-height:1
     <div class="proof__item">
       <span class="proof__num" data-count="4.8" data-decimals="1">4,8</span>
       <div class="proof__stars" aria-label="4,8 de 5 estrellas">★★★★★</div>
-      <span class="proof__lbl" data-en="Google rating">Valoración en Google</span>
+      <span class="proof__lbl" data-en="Google · 68 reviews">Google · 68 reseñas</span>
     </div>
     <div class="proof__item">
-      <span class="proof__num" data-count="68">68</span>
-      <span class="proof__lbl" data-en="Google reviews">Reseñas en Google</span>
+      <span class="proof__num" data-count="5.0" data-decimals="1">5,0</span>
+      <div class="proof__stars" aria-label="5 de 5 estrellas">★★★★★</div>
+      <span class="proof__lbl" data-en="Booksy · 264 reviews">Booksy · 264 reseñas</span>
     </div>
   </div>
-  <a href="https://search.google.com/local/reviews?placeid=ChIJs7sia5L7cg0R487xymxbXDs" target="_blank" rel="noopener" class="proof__cta link-u" data-en="See reviews on Google">Ver reseñas en Google</a>
+  <div class="proof__links">
+    <a href="https://search.google.com/local/reviews?placeid=ChIJs7sia5L7cg0R487xymxbXDs" target="_blank" rel="noopener" class="proof__cta link-u" data-en="Reviews on Google">Reseñas en Google</a>
+    <a href="https://barberiamoma.booksy.com/a" target="_blank" rel="noopener" class="proof__cta link-u" data-en="Reviews on Booksy">Reseñas en Booksy</a>
+  </div>
 </section>
 
 
