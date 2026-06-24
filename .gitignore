@@ -15,6 +15,8 @@ docs/
 fotos-originales/
 # vídeos: pesan GB, no van a la web en bruto
 *.mp4
+# excepción: el vídeo de la galería SÍ va a la web (comprimido, ~6 MB)
+!img/galeria-video.mp4
 # Notas de trabajo: NO van al repo público (mismo sistema que el Dashboard)
 CLAUDE.md
 PENDIENTES.md

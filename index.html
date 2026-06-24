@@ -198,9 +198,10 @@ h1,h2,h3{font-family:var(--serif);color:var(--ink);font-weight:400;line-height:1
 /* GALERIA — tiles verticales (lookbook) */
 .gal{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;max-width:1040px;margin:0 auto}
 .gal__item{overflow:hidden}
-.gal__item img{display:block;width:100%;aspect-ratio:3/4;object-fit:cover;object-position:center 25%;
+.gal__item img,.gal__item video{display:block;width:100%;aspect-ratio:3/4;object-fit:cover;object-position:center 25%;
   filter:grayscale(.85);transition:transform .8s var(--ease),filter .6s var(--ease)}
-.gal__item:hover img{transform:scale(1.06);filter:grayscale(0)}
+.gal__item:hover img,.gal__item:hover video{transform:scale(1.06);filter:grayscale(0)}
+.gal__item--video video{object-position:center 30%}
 
 /* PRODUCTOS — rejilla tienda (oculta hasta pulsar 'Productos') */
 #productos{display:none}
@@ -469,11 +470,13 @@ h1,h2,h3{font-family:var(--serif);color:var(--ink);font-weight:400;line-height:1
     </div>
   </div>
   <div class="gal">
+    <div class="gal__item gal__item--video reveal reveal--pop">
+      <video muted loop playsinline preload="metadata" poster="img/galeria-video-poster.jpg"><source src="img/galeria-video.mp4" type="video/mp4" /></video>
+    </div>
     <div class="gal__item reveal reveal--pop"><img src="img/g1.jpg" alt="Corte MOMA" /></div>
     <div class="gal__item reveal reveal--pop"><img src="img/g2.jpg" alt="Degradado lateral" /></div>
     <div class="gal__item reveal reveal--pop"><img src="img/g3.jpg" alt="Perfilado de barba" /></div>
     <div class="gal__item reveal reveal--pop"><img src="img/g4.jpg" alt="Degradado lateral" /></div>
-    <div class="gal__item reveal reveal--pop"><img src="img/g5.jpg" alt="Retrato cliente" /></div>
     <div class="gal__item reveal reveal--pop"><img src="img/g6.jpg" alt="Perfilado de barba" /></div>
   </div>
 </section>
@@ -647,6 +650,18 @@ h1,h2,h3{font-family:var(--serif);color:var(--ink);font-weight:400;line-height:1
   function start(){timer=setInterval(function(){go(i+1);},4000);}
   dots.forEach(function(b,n){b.addEventListener('click',function(){clearInterval(timer);go(n);start();});});
   start();
+})();
+</script>
+<script>
+/* Galería: el vídeo se reproduce al pasar el cursor (y pasa a color); en táctil, en bucle */
+(function(){
+  document.querySelectorAll('.gal__item--video').forEach(function(item){
+    var v = item.querySelector('video');
+    if(!v) return;
+    if(window.matchMedia('(hover:none)').matches){ v.setAttribute('autoplay',''); v.play().catch(function(){}); return; }
+    item.addEventListener('mouseenter', function(){ v.play().catch(function(){}); });
+    item.addEventListener('mouseleave', function(){ v.pause(); });
+  });
 })();
 </script>
 </body>
